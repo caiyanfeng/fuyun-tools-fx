@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="657.0" prefWidth="589.0" spacing="20.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fuyun.controller.ToolsMainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="657.0" prefWidth="549.0"
+              VBox.vgrow="NEVER" >
+            <children>
+                <TabPane fx:id="mainTabPane" prefHeight="657.0" prefWidth="549.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+
+                </TabPane>
+            </children>
+        </HBox>
+<!--        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="549.0"-->
+<!--              VBox.vgrow="NEVER" >-->
+<!--          <ScrollPane prefHeight="200.0" prefWidth="549.0" HBox.hgrow="ALWAYS">-->
+<!--            <content>-->
+<!--                <TextArea fx:id="msgTextArea" disable="true" prefHeight="200.0" prefWidth="549.0" HBox.hgrow="ALWAYS"/>-->
+<!--            </content>-->
+<!--          </ScrollPane>-->
+<!--        </HBox>-->
+    </children>
+</VBox>

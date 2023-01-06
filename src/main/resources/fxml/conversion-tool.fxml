@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fuyun.controller.ConversionToolController" >
+    <children>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="357.0" prefWidth="599.0"
+              VBox.vgrow="NEVER" alignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="40.0" />
+            </VBox.margin>
+            <children>
+                <TextArea fx:id="waitStrText" HBox.hgrow="ALWAYS" >
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                </TextArea>
+                <Button fx:id="copyWaitStrBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="66.0" text="复制" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+
+
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="599.0"
+              VBox.vgrow="NEVER" alignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <children>
+                <Button fx:id="lowerLineToHumpBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" text="下划线转驼峰↓">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="humpToLowerLine" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" text="驼峰转下划线↑" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="unicodeEncodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="中文转unicode↓">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="unicodeDecodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="unicode转中文↑" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="599.0"
+              VBox.vgrow="NEVER" alignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="0" />
+            </VBox.margin>
+            <children>
+                <Button fx:id="URLEncodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" text="URLEncode（UTF-8）↓">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="URLDecodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="150.0" text="URLDecode（UTF-8）↑" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="Base64EncodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" text="Base64Encode↓">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="Base64DecodeBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" text="Base64Decode↑" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="357.0" prefWidth="599.0"
+              VBox.vgrow="NEVER" alignment="CENTER">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="40.0" />
+            </VBox.margin>
+            <children>
+                <TextArea fx:id="retStrText" HBox.hgrow="ALWAYS" >
+                    <HBox.margin>
+                        <Insets top="5.0" />
+                    </HBox.margin>
+                </TextArea>
+                <Button fx:id="copyRetStrBtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="66.0" text="复制" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

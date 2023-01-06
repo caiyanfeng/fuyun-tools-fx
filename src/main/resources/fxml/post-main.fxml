@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fuyun.controller.PostMainController"  >
+    <children>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="599.0"
+              VBox.vgrow="NEVER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <ComboBox fx:id="methodComboBox" prefHeight="35.0" prefWidth="75.0" promptText="请求类型"  HBox.hgrow="NEVER"/>
+                <TextField fx:id="requestURLText" prefHeight="36.0" text="http://127.0.0.1:10999" promptText="请输入请求地址" HBox.hgrow="ALWAYS" >
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button fx:id="sendBtn" mnemonicParsing="false"  text="发送" HBox.hgrow="NEVER" prefHeight="36.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="599.0" VBox.vgrow="NEVER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <TabPane prefHeight="460.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS" >
+                    <tabs>
+                        <Tab text="请求头">
+                            <ScrollPane  fitToHeight="true" fitToWidth="true">
+                                <VBox fx:id="headerVBox"  prefHeight="180.0" prefWidth="600.0" >
+                                    <children>
+                                        <HBox prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                            <children>
+                                                <Label prefWidth="198.0" text="Key" HBox.hgrow="ALWAYS"/>
+                                                <Label prefWidth="309.0" text="Value" HBox.hgrow="ALWAYS"/>
+                                                <Label fx:id="headerBatchEditBtn" text="批量编辑" textFill="#00aeff" HBox.hgrow="ALWAYS"/>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                        <HBox fx:id="headerHBox" prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                            <children>
+                                                <TextField fx:id="headKey1" prefHeight="23.0" prefWidth="198.0" HBox.hgrow="ALWAYS"/>
+                                                <TextField fx:id="headValue1" prefHeight="23.0" prefWidth="309.0" HBox.hgrow="ALWAYS"/>
+                                                <Button fx:id="headDelBtn1" mnemonicParsing="false" text="del" visible="false" HBox.hgrow="ALWAYS"/>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </ScrollPane>
+                        </Tab>
+                        <Tab text="参数">
+                            <ScrollPane  fitToHeight="true" fitToWidth="true">
+                                <VBox prefHeight="460.0" prefWidth="600.0" >
+                                    <children>
+                                        <HBox fx:id="contentTypeRadioHBox" managed="false" visible="false" prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                            <children>
+                                                <RadioButton fx:id="mapParamRadio" selected="true" text="x-www-form-urlencoded;charset=UTF-8"/>
+                                                <RadioButton fx:id="jsonParamRadio" text="application/json" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="10.0" right="10.0" top="5.0" />
+                                            </padding>
+                                        </HBox>
+                                        <HBox fx:id="jsonParamEditHBox" managed="false" visible="false" prefHeight="450.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                            <children>
+                                                <TextArea fx:id="jsonParamTextArea" prefHeight="450.0" prefWidth="563.0" HBox.hgrow="ALWAYS" />
+                                                <!--<Label layoutX="543.0" layoutY="2.0" text="单个编辑" textFill="#00b7ff" />-->
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                                            </padding>
+                                        </HBox>
+                                        <HBox fx:id="mapParamHBox" managed="true" visible="true" prefHeight="450.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                            <VBox fx:id="paramVBox" prefHeight="450.0" prefWidth="600.0" HBox.hgrow="ALWAYS" >
+                                                <HBox  prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <Label prefWidth="200.0" text="Key" HBox.hgrow="ALWAYS"/>
+                                                        <Label prefWidth="300.0" text="Value" HBox.hgrow="ALWAYS"/>
+                                                        <Label fx:id="paramBatchEditBtn" text="批量编辑" textFill="#00aeff" HBox.hgrow="ALWAYS"/>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="2.0" left="20.0" right="20.0" top="5.0" />
+                                                    </padding>
+                                                </HBox>
+                                                <HBox fx:id="paramHBox" prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <TextField fx:id="paramKey" prefHeight="23.0" prefWidth="198.0" HBox.hgrow="ALWAYS"/>
+                                                        <TextField fx:id="paramValue" prefHeight="23.0" prefWidth="309.0" HBox.hgrow="ALWAYS"/>
+                                                        <Button fx:id="paramDelBtn" mnemonicParsing="false" text="del" visible="false" HBox.hgrow="ALWAYS"/>
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets bottom="0" left="10.0" right="10.0" top="2.0" />
+                                                    </VBox.margin>
+                                                </HBox>
+                                            </VBox>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </ScrollPane>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </HBox>
+        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="374.0" prefWidth="599.0" VBox.vgrow="NEVER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <TabPane prefHeight="374.0" prefWidth="605.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                    <tabs>
+                        <Tab text="响应体">
+                            <ScrollPane  fitToHeight="true" fitToWidth="true">
+                                <VBox fx:id="respBodyVBox" >
+                                    <HBox  prefHeight="36.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                        <children>
+                                            <ToggleButton fx:id="defaultToggleButton" text="原始数据" prefWidth="100.0"></ToggleButton>
+                                            <ToggleButton fx:id="jsonToggleButton" text="JSON格式" prefWidth="100.0"></ToggleButton>
+
+                                        </children>
+                                        <padding>
+                                            <Insets bottom="2.0" left="20.0" right="20.0" top="5.0" />
+                                        </padding>
+                                    </HBox>
+                                    <HBox fx:id="respBodyTextHBox" prefHeight="200.0" prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                        <TextArea fx:id="respBodyTextArea" prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                    <HBox fx:id="respBodyJsonHBox" visible="false" managed="false" prefHeight="200.0"  prefWidth="563.0" spacing="10.0" VBox.vgrow="NEVER">
+                                        <TreeView fx:id="respBodyTreeView" HBox.hgrow="ALWAYS"></TreeView>
+                                    </HBox>
+                                </VBox>
+                            </ScrollPane>
+                        </Tab>
+                        <Tab text="响应头">
+                            <ScrollPane fx:id="respHeadScrollPane" fitToHeight="true" fitToWidth="true">
+<!--                                <TextArea fx:id="respHeadTextArea" prefHeight="200.0" prefWidth="200.0" />-->
+                                <TreeView fx:id="respHeadTreeView"  HBox.hgrow="ALWAYS"></TreeView>
+                            </ScrollPane>
+                        </Tab>
+                        <Tab text="Cookie" >
+                            <ScrollPane  fitToHeight="true" fitToWidth="true">
+                                <TableView fx:id="cookieTableView" prefHeight="374.0" prefWidth="605.0"  HBox.hgrow="ALWAYS">
+
+                                </TableView>
+                            </ScrollPane>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </HBox>
+    </children>
+</VBox>
